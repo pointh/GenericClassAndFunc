@@ -16,6 +16,12 @@ namespace GenericClassAndFunc
         {
             return a.CompareTo(b) > 0;
         }
+
+        public static bool FirstShapeIsBigger<T, U>(T a, U b) where T: Shape, ISizable where U: Shape, ISizable
+        {
+            return a.Size > b.Size;
+        }
+
         static void Main()
         {
             Console.WriteLine("Hello World!");
@@ -32,6 +38,13 @@ namespace GenericClassAndFunc
 
             Console.WriteLine($"{ix}, {iy}, první je větší: {FirstIsBigger(ix, iy)}");
             Console.WriteLine($"{dx}, {dy}, první je větší: {FirstIsBigger(dx, dy)}");
+
+            Console.ReadLine();
+
+            Ctverec c = new Ctverec { strana = 12.0 };
+            Kruh k = new Kruh { radius = 4.0 };
+
+            Console.WriteLine($"{c}, {k}, první je větší: {FirstShapeIsBigger(c, k)}");
 
             Console.ReadLine();
         }
