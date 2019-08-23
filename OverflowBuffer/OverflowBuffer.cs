@@ -40,8 +40,9 @@ namespace OverflowBufferNS
             {
                 Console.WriteLine(buff[i]);
                 if (i == 0)
-                    i = buff.Length;
-                i--;
+                    i = buff.Length - 1;
+                else
+                    i--;
             }
         }
     }
