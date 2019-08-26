@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GenericClassAndFunc
 {
-    interface ISizable
+    public interface ISizable
     {
         double Size { get; }
     }
